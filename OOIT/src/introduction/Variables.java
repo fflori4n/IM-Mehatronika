@@ -23,8 +23,8 @@ public class Variables {
 		 // Konkatenacija stringova
 		 String firstName = "Petar";
 		 String lastName = "Petrovic";
-		 
 		 // char space = ' ';
+		 
 		 // System.out.println(firstName + space + lastName);
 		 System.out.println("Student je: " + firstName + ' ' + lastName);
 		 
