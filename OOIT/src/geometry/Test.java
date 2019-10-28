@@ -9,7 +9,7 @@ public class Test {
 		System.out.println(p1.getX());
 		
 		p1.setX(6);
-		p1.setY(6);
+		p1.setY(7);
 		p1.setSelected(true);
 		
 		p2.setX(9);
