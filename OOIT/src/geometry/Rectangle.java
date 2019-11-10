@@ -5,6 +5,34 @@ public class Rectangle {
 	private int width;
 	private int height;
 	private boolean selected;
+	
+	public Rectangle() {
+
+	}
+
+	public Rectangle(Point upperLeft, int width, int height) {
+		this.upperLeft = upperLeft;
+		this.width = width;
+		this.height = height;
+	}
+
+	public Rectangle(Point upperLeft, int width, int height, boolean selected) {
+		this(upperLeft, width, height);
+		this.selected = selected;
+	}
+
+	// Upper left point:(xUpperLeft,yUpperLeft), width = <width>, height = <height>
+	public String toString() {
+		return "Upper left point: "+upperLeft+", width = "+width+", height = "+height;
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Rectangle) {
+			Rectangle temp = (Rectangle) obj;
+			return upperLeft.equals(temp.upperLeft) && width == temp.width && height == temp.height;
+		}
+		return false;
+	}
 
 	public int area() {
 		return width * height;

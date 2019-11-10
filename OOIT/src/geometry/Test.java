@@ -71,6 +71,50 @@ public class Test {
 		l1.getEndPoint().setY((int) ((c1.getCenter().getX() - c1.getCenter().getY())
 				- (r1.getUpperLeft().getX() + c1.area())));
 		System.out.println(l1.getEndPoint().getY());
+		
+		//Vezbe 4
+		Point p3 = new Point(6, 7);
+		Line l2 = new Line(p2, new Point(12, 13));
+		Rectangle r2 = new Rectangle(new Point(p2.getX(), p2.getY()), 50, 100);
+
+		p2.setX(50);
+		r2.getUpperLeft().setX(p2.getX());
+
+		Circle c2 = new Circle(new Point(), 10, true);
+
+		System.out.println("X, Y center c2: " + c2.getCenter().getX() + " " + c2.getCenter().getY());
+		System.out.println("p2 x: " + p2.getX());
+		System.out.println("l2 x startPoint: " + l2.getStartPoint().getX());
+		System.out.println("r2 upperLeft x: " + r2.getUpperLeft().getX());
+
+		// kreirati pravougaonik r3 tako da ima iste koordinate kao pocetna tacka l2
+		// tako da se promenom x i y pocetne tacke l2 ne promene x, y r3
+		// visina duzina linije l2
+		// sirina povrsina r2 umanjena za povrsina c2
+		// selected vrednost izraza konjunkcije selected krajnje tacke l2 i p1
+
+		Rectangle r3 = new Rectangle(new Point(l2.getStartPoint().getX(), l2.getStartPoint().getY()),
+				(int) (r2.area() - c2.area()), (int) (l2.length()), l2.getEndPoint().isSelected() && p1.isSelected());
+
+		System.out.println(p1);
+		System.out.println(l2);
+		System.out.println(r3+" selected = " + r3.isSelected());
+		System.out.println(c2);
+
+		Point p5 = new Point(5, 6);
+		Point p6 = p5;
+		Point p7 = new Point(5, 6);
+
+		System.out.println("p5 == p6: " + (p5==p6));
+		System.out.println("p5 == p7: " + (p5==p7));
+
+		System.out.println("p5 equals p6: " + p5.equals(l1));
+		System.out.println("p5 equals p7: " + p5.equals(p7));
+
+		Line l3 = new Line(new Point(10, 11), new Point(12, 13));
+		Line l4 = new Line(new Point(10, 11), new Point(12, 13));
+
+		System.out.println("l3 equals l4: " + l3.equals(l4));
 
 	}
 

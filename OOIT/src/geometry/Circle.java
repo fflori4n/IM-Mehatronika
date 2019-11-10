@@ -4,6 +4,33 @@ public class Circle {
 	private Point center;
 	private int r;
 	private boolean selected;
+	
+	public Circle() {
+
+	}
+
+	public Circle(Point center, int r) {
+		this.center = center;
+		this.r = r;
+	}
+
+	public Circle(Point center, int r, boolean selected) {
+		this(center, r);
+		this.selected = selected;
+	}
+
+	// Center:(xCenter,yCenter), radius = <radius>
+	public String toString() {
+		return "Center: "+center+", radius = "+r;
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Circle) {
+			Circle temp = (Circle) obj;
+			return center.equals(temp.center) && r == temp.r;
+		}
+		return false;
+	}
 
 	public double area() {
 		return r * r * Math.PI;

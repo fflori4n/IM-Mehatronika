@@ -4,6 +4,33 @@ public class Line {
 	private Point startPoint;
 	private Point endPoint;
 	private boolean selected;
+	
+	public Line() {
+
+	}
+
+	public Line(Point startPoint, Point endPoint) {
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
+	}
+
+	public Line(Point startPoint, Point endPoint, boolean selected) {
+		this(startPoint, endPoint);
+		this.selected = selected;
+	}
+
+	// (xStartPoint,yStartpoint)-->(xEndPoint,yEndpoint)
+	public String toString() {
+		return startPoint+"-->"+endPoint;
+	}
+
+	public boolean equals(Object obj) {
+		if(obj instanceof Line) {
+			Line temp = (Line) obj;
+			return startPoint.equals(temp.startPoint) && endPoint.equals(temp.endPoint);
+		}
+		return false;
+	}
 
 	public double length() {
 		return startPoint.distance(endPoint.getX(), endPoint.getY());
