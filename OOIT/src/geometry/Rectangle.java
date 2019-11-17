@@ -33,6 +33,15 @@ public class Rectangle {
 		}
 		return false;
 	}
+	
+	public boolean contains(int x, int y) {
+		return (upperLeft.getX() < x && x < upperLeft.getX() + width && upperLeft.getY() < y
+				&& y < upperLeft.getY() + height);
+	}
+
+	public boolean contains(Point p) {
+		return this.contains(p.getX(), p.getY());
+	}
 
 	public int area() {
 		return width * height;

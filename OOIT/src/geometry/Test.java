@@ -72,7 +72,7 @@ public class Test {
 				- (r1.getUpperLeft().getX() + c1.area())));
 		System.out.println(l1.getEndPoint().getY());
 		
-		//Vezbe 4
+		//VEZBE 4
 		Point p3 = new Point(6, 7);
 		Line l2 = new Line(p2, new Point(12, 13));
 		Rectangle r2 = new Rectangle(new Point(p2.getX(), p2.getY()), 50, 100);
@@ -115,6 +115,13 @@ public class Test {
 		Line l4 = new Line(new Point(10, 11), new Point(12, 13));
 
 		System.out.println("l3 equals l4: " + l3.equals(l4));
+		
+		// VEZBE 5
+		System.out.println(p5.contains(10,7));
+
+		Donut d1 = new Donut();
+		System.out.println(d1.getR()+" "+d1.getInnerR());
+		System.out.println();
 
 	}
 
