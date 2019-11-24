@@ -1,9 +1,10 @@
 package geometry;
 
-public class Circle {
+import java.awt.Graphics;
+
+public class Circle extends Shape {
 	protected Point center;
 	protected int r;
-	protected boolean selected;
 	
 	public Circle() {
 
@@ -51,19 +52,23 @@ public class Circle {
 	public Point getCenter() {
 		return center;
 	}
+	
 	public void setCenter(Point center) {
 		this.center = center;
 	}
+	
 	public int getR() {
 		return r;
 	}
+	
 	public void setR(int r) {
 		this.r = r;
 	}
-	public boolean isSelected() {
-		return selected;
-	}
-	public void setSelected(boolean selected) {
-		this.selected = selected;
+
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawOval(center.getX() - r, center.getY() - r, 2 * r, r + r);
 	}
 }
