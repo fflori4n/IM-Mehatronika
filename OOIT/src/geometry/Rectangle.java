@@ -81,4 +81,22 @@ public class Rectangle extends Shape {
 		// TODO Auto-generated method stub
 		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
 	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeft.moveBy(byX, byY);
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		upperLeft.moveTo(x, y);
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Rectangle) {
+			return (int) (this.area() - ((Rectangle)o).area());
+		}
+		return 0;
+	}
 }

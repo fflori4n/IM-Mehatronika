@@ -71,4 +71,24 @@ public class Circle extends Shape {
 		// TODO Auto-generated method stub
 		g.drawOval(center.getX() - r, center.getY() - r, 2 * r, r + r);
 	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		center.moveBy(byX, byY);
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		// TODO Auto-generated method stub
+		center.moveTo(x, y);
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Circle) {
+			return (int) (this.area() - ((Circle) o).area());
+		}
+		return 0;
+	}
 }
