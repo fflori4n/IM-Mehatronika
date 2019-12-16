@@ -1,5 +1,6 @@
 package geometry;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Line extends Shape{
@@ -56,8 +57,13 @@ public class Line extends Shape{
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+		g.setColor(Color.black);
 		g.drawLine(startPoint.getX(), startPoint.getY(), endPoint.getX(), endPoint.getY());
+		if (selected) {
+			g.setColor(Color.blue);
+			g.drawRect(this.getStartPoint().getX() - 2, this.getStartPoint().getY() - 2, 4, 4);
+			g.drawRect(this.getEndPoint().getX() - 2, this.getEndPoint().getY() - 2, 4, 4);
+		}
 	}
 
 	@Override

@@ -58,7 +58,13 @@ public class Test {
 
 		// postaviti radius kruga c1 na vrednost udaljenosti tacaka
 		// center c1 i l1 startPoint
-		c1.setR((int) c1.getCenter().distance(l1.getStartPoint().getX(), l1.getStartPoint().getY()));
+		try {
+			//c1.setR((int) c1.getCenter().distance(l1.getStartPoint().getX(), l1.getStartPoint().getY()));
+			c1.setR(10);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		System.out.println("R c1: "+c1.getR());
 
 		// postaviti selected c1 na vrednost izraza koji proverava
@@ -121,7 +127,7 @@ public class Test {
 		// VEZBE 5
 		System.out.println(p5.contains(10,7));
 
-		Donut d1 = new Donut();
+		Donut d1 = new Donut(new Point(50, 50), 100, 20);
 		System.out.println(d1.getR()+" "+d1.getInnerR());
 		System.out.println();
 
