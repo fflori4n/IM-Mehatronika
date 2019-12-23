@@ -276,6 +276,23 @@ public class Test {
 		for (int i = 0; i < donuts.length; i++) {
 			System.out.println(donuts[i]);
 		}
+		
+		//VEZBE 10
+		try {
+			System.out.println(donuts[2]);
+			Integer.parseInt("pet");
+		} catch (ArrayIndexOutOfBoundsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Ne postoji element sa indeksom 10");
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("ne mogu da pretvorim u int");
+		} finally {
+			System.out.println("ja se uvek izvrsavam!");
+		}
+		System.out.println("da li sam se ispisao na konzolu ");
 	}
 
 }
