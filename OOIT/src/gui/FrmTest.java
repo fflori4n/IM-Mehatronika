@@ -68,7 +68,7 @@ public class FrmTest {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frame.s
 	 */
 	private void initialize() {
 		frame = new JFrame();
@@ -85,7 +85,12 @@ public class FrmTest {
 		JButton btnIspis = new JButton("Ispis");
 		btnIspis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Antistres dugme :)");
+				DlgTest dlg = new DlgTest();
+				dlg.setVisible(true);
+				
+				if (dlg.isOk) {
+					dlm.addElement(dlg.getTxtIme().getText() + " " + dlg.getTxtPrezime().getText());
+				}
 			}
 		});
 		pnlJug.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
