@@ -15,6 +15,11 @@ public class Circle extends Shape {
 		this.center = center;
 		this.r = r;
 	}
+	
+	public Circle(Point center, int r, Color c) {
+		this(center,r);
+		this.color = c;
+	}
 
 	public Circle(Point center, int r, boolean selected) {
 		this(center, r);
@@ -71,7 +76,7 @@ public class Circle extends Shape {
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(color);
 		g.drawOval(center.getX() - r, center.getY() - r, 2 * r, r + r);
 		if (selected) {
 			g.setColor(Color.blue);

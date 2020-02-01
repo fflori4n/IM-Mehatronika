@@ -17,6 +17,10 @@ public class Rectangle extends Shape {
 		this.width = width;
 		this.height = height;
 	}
+	public Rectangle(Point upperLeft, int width, int height,Color c) {
+		this(upperLeft, width,height);
+		this.color = c;
+	}
 
 	public Rectangle(Point upperLeft, int width, int height, boolean selected) {
 		this(upperLeft, width, height);
@@ -25,7 +29,7 @@ public class Rectangle extends Shape {
 
 	// Upper left point:(xUpperLeft,yUpperLeft), width = <width>, height = <height>
 	public String toString() {
-		return "Upper left point: "+upperLeft+", width = "+width+", height = "+height;
+		return "Rect:"+upperLeft+",w/h "+width+"/"+height + "-- area:" + this.getArea();
 	}
 	
 	public boolean equals(Object obj) {
@@ -79,7 +83,7 @@ public class Rectangle extends Shape {
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(this.color);
 		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
 
 		if (selected) {
@@ -107,5 +111,9 @@ public class Rectangle extends Shape {
 			return (int) (this.area() - ((Rectangle)o).area());
 		}
 		return 0;
+	}
+	
+	public double getArea() {
+		return this.getWidth()*this.getHeight();
 	}
 }

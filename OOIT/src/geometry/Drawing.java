@@ -15,7 +15,9 @@ public class Drawing extends JPanel {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("Drawing");
 		frame.setSize(800, 600);
+		frame.setBackground(Color.WHITE);
 		Drawing drawing = new Drawing();
+		drawing.setBackground(Color.WHITE);
 		frame.getContentPane().add(drawing);
 		frame.setVisible(true);
 		

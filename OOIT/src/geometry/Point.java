@@ -23,6 +23,10 @@ public class Point extends Shape{
 		// this.y = y;
 		this.selected = selected;
 	}
+	public Point(int x, int y, Color c) {
+		this(x,y);
+		this.setColor(c);
+	}
 
 	public String toString() {
 		// (x,y)
@@ -69,7 +73,7 @@ public class Point extends Shape{
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(this.color);
 		g.drawLine(x-2, y, x+2, y);
 		g.drawLine(x, y+2, x, y-2);
 		if(selected) {

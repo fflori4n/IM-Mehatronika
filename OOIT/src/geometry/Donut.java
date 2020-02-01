@@ -14,6 +14,10 @@ public class Donut extends Circle {
 		super(center, r);
 		this.innerR = innerR;
 	}
+	public Donut(Point center, int r, int innerR, Color c) {
+		this(center, r, innerR);
+		this.color = c;
+	}
 
 	public Donut(Point center, int r, int innerR, boolean selected) {
 		this(center, r, innerR);
@@ -29,7 +33,7 @@ public class Donut extends Circle {
 
 	@Override
 	public boolean contains(int x, int y) {
-		return super.contains(x, y) && center.distance(x, y) >= innerR;
+		return super.contains(x,y) && center.distance(x, y) >= innerR;
 	}
 
 	@Override
@@ -53,7 +57,7 @@ public class Donut extends Circle {
 	@Override
 	public void draw(Graphics g) {
 		super.draw(g);
-		g.setColor(Color.black);
+		g.setColor(this.color);
 		g.drawOval(center.getX()-innerR, center.getY()-innerR, 2*innerR, 2*innerR);
 		if (selected) {
 			g.setColor(Color.blue);
