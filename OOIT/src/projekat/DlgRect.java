@@ -168,10 +168,27 @@ public class DlgRect extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if (upperLeftX.getText().trim().isEmpty() || upperLeftY.getText().trim().isEmpty() || width.getText().trim().isEmpty() || heigth.getText().trim().isEmpty()) {
-							dispose();
+							//dispose();
 							// TODO: notify user
 							System.out.println("textbox can't be blank");
+							return;
 						}	
+						try {
+							Integer.parseInt(upperLeftX.getText());
+							Integer.parseInt(upperLeftY.getText());
+							if((0 > Integer.parseInt(width.getText()))){
+								System.out.println("[  Er  ]: Width can't be negative!");
+								return;
+							}
+							if((0 > Integer.parseInt(heigth.getText()))){
+								System.out.println("[  Er  ]: Heigth can't be negative!");
+								return;
+							}
+							
+						}catch(Exception ex) {
+							System.out.println("[  Er  ]: Conversion error! -- can't convert to Int");
+							return;
+						}
 						applyChange = true;
 						setVisible(false);
 					}

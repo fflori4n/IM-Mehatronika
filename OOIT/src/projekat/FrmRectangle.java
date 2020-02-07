@@ -36,6 +36,7 @@ public class FrmRectangle extends JFrame {
 			public void run() {
 				try {
 					FrmRectangle frame = new FrmRectangle();
+					frame.setTitle("MH59/2017 Stek & Sort");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

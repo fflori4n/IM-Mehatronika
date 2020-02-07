@@ -79,7 +79,7 @@ public class FrmMain {
 		frmPoorMansPaint = new JFrame();
 		frmPoorMansPaint.getContentPane().setForeground(Color.WHITE);
 		//frmPoorMansPaint.getContentPane().setBackground(Color.LIGHT_GRAY);
-		frmPoorMansPaint.setTitle("Poor man's paint");
+		frmPoorMansPaint.setTitle("MH59/2017 Drawing");
 		frmPoorMansPaint.setBounds(100, 100, 690, 427);
 		frmPoorMansPaint.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -345,14 +345,15 @@ public class FrmMain {
 			    	drawing.setDrawMode("CRC");
 					
 				}
-				addShape.defaultColor = addShape.shapeColor = shapeToModif.getColor();
+				addShape.defaultColor = shapeToModif.getColor();
+				addShape.shapeColor = shapeToModif.getColor();
 				addShape.setVisible(true);
 				
 				if(!addShape.OKpressed) {
 					 return;
-				 }
+				}
 				try {
-					System.out.print("color:" + addShape.shapeColor);
+					System.out.print("color:" + addShape.shapeColor + '\n');
 				 Point newPoint = new Point(Integer.parseInt(addShape.txtPointX.getText()),Integer.parseInt(addShape.txtPointY.getText()));
 				 if(drawing.getDrawMode().contentEquals("POI")) {
 					 drawing.add2shapes(new Point(Integer.parseInt(addShape.txtPointX.getText()),Integer.parseInt(addShape.txtPointY.getText()),addShape.shapeColor));
@@ -369,8 +370,10 @@ public class FrmMain {
 					 System.out.print("[  Er  ]: conversion error!");
 					 return;
 				 }
+				 drawing.printList();
 				 drawing.removeIndex(drawing.getIndexOf(shapeToModif), g);
 				 drawing.setDrawMode("SEL");
+				 drawing.printList();
 			}
 		});
 		GridBagConstraints gbc_btnModify = new GridBagConstraints();

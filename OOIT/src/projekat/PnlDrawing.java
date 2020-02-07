@@ -37,7 +37,16 @@ public class PnlDrawing extends  JPanel {
 		return drawMode;
 	}
 	public int getIndexOf(Shape obj) {
-		return shapeList.indexOf(obj);
+		return shapeList.lastIndexOf(obj);
+	}
+	public void printList() {
+		Iterator<Shape> it = shapeList.iterator();
+		System.out.println("**PrintList**");
+		while(it.hasNext()) {
+			Shape temp = it.next();
+			System.out.println(">" + temp);
+		}
+		System.out.println("**********");
 	}
 	public void removeIndex(int i, Graphics g) {
 		try {
